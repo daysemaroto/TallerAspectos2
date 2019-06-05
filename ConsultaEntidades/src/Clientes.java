@@ -64,7 +64,7 @@ public class Clientes extends Entidad{
 			mensaje.getContentPane().add(msj);
 			mensaje.setBounds(100, 100, 450, 300);
 			mensaje.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-			mensaje.setVisible(true);
+			//mensaje.setVisible(true);
 		}
 		
 		

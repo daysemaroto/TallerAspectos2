@@ -5,10 +5,24 @@ public aspect VerificarSesion {
     before() : nombrePointcut() {
         // MétodoInicioSesión
     	
+    	if(!IniciarSesion.sesionIniciada && !Entidad.mensaje.isVisible()) {
+    		System.out.println("Debe iniciar sesion antes");
+			IniciarSesion.initialize();
+    		
+	    	}else if(IniciarSesion.sesionIniciada && !Entidad.mensaje.isVisible()) {
+	    		Clientes.mensaje.setVisible(true);
+	    	}
     	
     } 
+    
     after() : nombrePointcut()  {
         //Ya se inició sesión. (Puede imprimir un mensaje)
-    	//System.out.println("Ya inicio sesion.");
+    	if(IniciarSesion.sesionIniciada) {
+    		System.out.println("Ya inicio sesion.");
+    		Entidad.mensaje.setVisible(true);
+	    	}else {
+	    		System.out.println("Inicie Sesion please");
+	    	}
+    	
     }  
 }

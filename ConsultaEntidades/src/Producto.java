@@ -38,20 +38,16 @@ public class Producto extends Entidad {
 			
 			System.out.println("Consultando");
 			// TODO: Utilizar el Frame mensaje para mostrar el nombre de lo que se ha consultado
-			if(IniciarSesion.sesionIniciada==false) {
-	    		System.out.println("Debe iniciar sesion primero.");
-	    		IniciarSesion.initialize();
-	    	}
-			else {
+			
 			
 			JLabel msj = new JLabel("Has consultado "+producto);
 			mensaje.getContentPane().removeAll();
 			mensaje.getContentPane().add(msj);
 			mensaje.setBounds(100, 100, 450, 300);
 			mensaje.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-			mensaje.setVisible(true);
+			//mensaje.setVisible(true);
 			
-			}
+			
 			
 			
 		
